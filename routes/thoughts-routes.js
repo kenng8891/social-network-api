@@ -1,14 +1,14 @@
-const router = require("express").Router;
+const router = require("express").Router();
 
 const {
   getThoughts,
-  getThoughtsbyId,
+  getThoughtsById,
   createThoughts,
   updateThoughts,
   deleteThoughts,
   createReaction,
   removeReaction,
-} = require("../controllers/thought-controllers");
+} = require("../controllers/thoughts-controllers");
 
 //create get post routes
 router.route("/").get(getThoughts).post(createThoughts);
@@ -16,7 +16,7 @@ router.route("/").get(getThoughts).post(createThoughts);
 //CRUD routes using ID
 router
   .route("/:id")
-  .get(getThoughtsbyId)
+  .get(getThoughtsById)
   .put(updateThoughts)
   .delete(deleteThoughts);
 
